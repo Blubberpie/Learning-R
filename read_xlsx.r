@@ -48,7 +48,7 @@ set_quarterly_scores <- function() {
     score_at_start_b <- 0
 
     # Keep track of the current quarter number
-    last_quarter <- quarter[i, ]
+    last_quarter <- quarter[1, ]
 
     # Loop through the quarters
     # If the quarter number goes up, then we are at a new quarter
