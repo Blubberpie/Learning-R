@@ -12,6 +12,8 @@ play_data <- read.csv(
 )[, 1:8]
 
 # Let's rename the columns. They're quite ugly
+# You don't need to do this. But it's a good idea to
+# clean up your data.
 colnames(play_data) <- c(
     "quarterly",
     "seconds_left",
@@ -33,6 +35,7 @@ play_data[1, ]
 play_data[1]
 
 # Define a function that will help us do our job
+# your_function_name <- function() { your logic here }
 set_quarterly_scores <- function() {
     # Get the necessary columns
     quarter <- play_data[1]
@@ -53,16 +56,24 @@ set_quarterly_scores <- function() {
     # Loop through the quarters
     # If the quarter number goes up, then we are at a new quarter
     # If the quarter number goes down, it's the end of the 4th quarter
+    # Loop from 1 to the length of the quarter column
     for (i in seq_len(nrow(quarter))) {
         current_quarter <- quarter[i, ]
+
+        # If current quarter is greater than last quarter: for example 3 > 2
+        # then we reset the score_at_start variable to the end of quarter score
         if (current_quarter > last_quarter) {
             score_at_start_a <- team_a_scores[i - 1, ]
             score_at_start_b <- team_b_scores[i - 1, ]
-        } else if (current_quarter < last_quarter) {
+        }
+        # Otherwise if it is less: for example 1 < 4
+        # Then we reset it to 0
+        else if (current_quarter < last_quarter) {
             score_at_start_a <- 0
             score_at_start_b <- 0
         }
 
+        # Add to our result list here
         quarterly_a_scores[i] <- team_a_scores[i, ] - score_at_start_a
         quarterly_b_scores[i] <- team_b_scores[i, ] - score_at_start_b
         last_quarter <- current_quarter

@@ -1,3 +1,5 @@
+# This file is just me testing out different functions in R
+
 # List from 5 to 15
 x <- 5:15
 
