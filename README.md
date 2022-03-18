@@ -1,5 +1,5 @@
 # Learning R
-Experiments with R, and playing around with reading excel/csv files and parsing their data.
+Experiments with R, and playing around with reading excel/csv files and parsing their data. This is a tutorial for a friend :)
 
 # Files:
 - `basic.r` : Experiments with different functions in R
