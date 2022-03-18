@@ -31,7 +31,7 @@ paste("Today is", date())
 do_count <- function(lo, hi) {
     print(sprintf("I can count from %d to %d", lo, hi))
     counter <- lo
-    for (i in (lo+1):hi) {
+    for (i in (lo + 1):hi) {
         counter <- paste(counter, i, sep = ", ")
     }
     print(counter)
